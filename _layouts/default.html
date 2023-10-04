@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "zh-cmn-Hans" }}">
+  <head>
+    <meta charset="UTF-8">
+ <!-- 自定义样式 by CS-->
+    <style>
+em
+ {
+   font-size: 14px;
+   color: #808080;
+ }
+hr 
+ {
+    margin: 0;
+}
+ p {
+ color: initial; /* 覆盖外部CSS文件中对p元素的字体颜色设置 */
+}
+</style>    
+    
+{% seo %}
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <!-- 增加属性值"anonymous" by CS-->
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" as="style" type="text/css" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+     <!-- 预连接tencentcloud COS by CS-->
+    <link rel="preconnect" href="https://blog-1300880990.cos.ap-beijing.myqcloud.com">
+    {% include head-custom.html %}
+
+        <!-- 51.la统计 by CS-->
+<script>
+!function(p){"use strict";!function(t){var s=window,e=document,i=p,c="".concat("https:"===e.location.protocol?"https://":"http://","sdk.51.la/js-sdk-pro.min.js"),n=e.createElement("script"),r=e.getElementsByTagName("script")[0];n.type="text/javascript",n.setAttribute("charset","UTF-8"),n.async=!0,n.src=c,n.id="LA_COLLECT",i.d=n;var o=function(){s.LA.ids.push(i)};s.LA?s.LA.ids&&o():(s.LA=p,s.LA.ids=[],o()),r.parentNode.insertBefore(n,r)}()}({id:"3FzELOJ3gTcTmwnV",ck:"3FzELOJ3gTcTmwnV"});
+</script>
+  </head>
+  <body>
+{% if page.title=="文章列表" %}
+    <header class="page-header" role="banner" style="padding: 0.5rem 1rem 0.3rem 1rem">
+      <h1 class="project-name">{{ site.title | default: site.github.repository_name }}</h1>
+      <h2 class="project-tagline" style="margin-bottom: 0">{{ page.description | default: site.description | default: site.github.project_tagline }}</h2>
+    </header>
+    {% endif %}
+    <main id="content" class="main-content" role="main">
+      {{ content }}
+
+      <footer class="site-footer">
+        {% if page.title!="文章列表" %}
+        <span class="site-footer-credits"><a href="/">回到首页</a></span>
+        {% endif %}
+      </footer>
+    </main>
+  </body>
+</html>
